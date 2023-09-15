@@ -12,36 +12,34 @@ public class Utils {
 
     public static List<CurC> curCList = new ArrayList<>(Arrays.asList(CurC.values()));
 
-    public static String[] parseByBitPair(String symbol) {
-        String[] result = new String[2];
+    public static List<String> parseByBitPair(String symbol) {
+        List<String> result = new ArrayList<>(2);
 
         for (int i = 0; i < symbol.length(); i++) {
             String firstCurrency = symbol.substring(0, i + 1);
             String remaining = symbol.substring(i + 1);
 
             if (containsCur(firstCurrency) && containsCur(remaining)) {
-                result[0]=firstCurrency;
-                result[1]=remaining;
+                result.add(firstCurrency);
+                result.add(remaining);
                 return result;
             }else if(i == symbol.length()-1){
                 writeProcess(symbol); //записываем в файл
             }
         }
-        return result; // Возвращаем пустой список, если не удалось разделить входную строку на пару криптовалют
+        return result; // Возвращаем пустой массив, если не удалось разделить входную строку на пару криптовалют
     }
 
     public static List<String> parseOkxPair(String instId) {
-        List<String> result = new ArrayList<>();
-        String[]pair = instId.split("-");
-        if(pair.length!=2){
+        List<String> result = new ArrayList<>(2);
+        String[]splited = instId.split("-");
+        if(splited.length!=2){
             writeProcess(instId);
-            return result;
+            return result; // Возвращаем пустой массив, если не удалось разделить входную строку на пару криптовалют
         }
-
-        result.add(pair[0]);
-        result.add(pair[1]);
-
-        return result; // Возвращаем пустой список, если не удалось разделить входную строку на пару криптовалют
+        result.add(splited[0]);
+        result.add(splited[1]);
+        return result;
     }
 
     public static boolean containsCur(String curName){

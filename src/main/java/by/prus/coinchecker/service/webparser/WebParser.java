@@ -1,4 +1,4 @@
-package by.prus.coinchecker.service;
+package by.prus.coinchecker.service.webparser;
 
 public interface WebParser {
 

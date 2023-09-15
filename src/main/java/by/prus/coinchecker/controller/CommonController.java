@@ -1,8 +1,8 @@
 package by.prus.coinchecker.controller;
 
-import by.prus.coinchecker.service.WebParser;
-import by.prus.coinchecker.service.WebParserSimple;
-import by.prus.coinchecker.service.WebParserStrong;
+import by.prus.coinchecker.service.webparser.WebParser;
+import by.prus.coinchecker.service.webparser.WebParserSimple;
+import by.prus.coinchecker.service.webparser.WebParserStrong;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
