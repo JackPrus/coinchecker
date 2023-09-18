@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class OkxSwapData {
     private String instType; // Instrument type                                | SWAP
-    private String instId;   // Instrument ID                                  | BTC-USDT-SWAP
+    private String instId;   // Instrument ID                                  | BTC-USDT
     private String last;     // Last traded price                              | 26342.5
     private String lastSz;   // Last traded size                               | 2
     private String askPx;    // Best ask price                                 | 26343
